@@ -7,6 +7,7 @@ apt-get install unzip
 wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 mv terraform /usr/local/bin/
+rm -f terraform*
 terraform --version
 SCRIPT
 
@@ -24,6 +25,7 @@ Vagrant.configure("2") do |config|
 			v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 			v.customize ["modifyvm", :id, "--memory", 3000]
 			v.customize ["modifyvm", :id, "--name", "node1"]
+			v.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
 		end
     node1.vm.provision :shell, inline: $install_terraform
     node1.vm.provision "file", source: "~/.ssh", destination: "$HOME/.ssh"
