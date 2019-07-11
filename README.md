@@ -3,6 +3,7 @@
 
 
 ## Prerequisites
+- Terraform v0.12.3 _(Code has been tested with this version)_
 - Ensure that AWS credentials are available at: "~/.aws/credentials" on the host dev machine
 ```
       [default]
