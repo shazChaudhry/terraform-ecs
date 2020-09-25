@@ -1,4 +1,9 @@
-# WORK IN PROGRESS
+# This repo will be archived soon
+
+ Once [compose-cli](https://github.com/docker/compose-cli) is generally available, This repo will then be archived.
+ 
+This CLI tool makes it easy to run containers in the cloud using either Amazon Elastic Container Service (ECS) or Microsoft Azure Container Instances (ACI) using the Docker commands you already know.
+ 
 ===========================================
 
 
